@@ -1,10 +1,21 @@
-struct deta
+int main(int argc,char **argv)
 {
-	int number;
-};
+	int i;
 
-int main(int argc,char argv)
-{
-	deta 
+
+	if(argc <= 2)
+		return (0);
+	i = 0;
+	while (argv[i])
+	{
+		ft_lstnew();
+		ft_lstadd_back();
+	}
+	
 }
 
+sa;
+
+ab;
+
+ss;
