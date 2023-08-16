@@ -6,7 +6,7 @@
 /*   By: rozeki <rozeki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 15:07:42 by rozeki            #+#    #+#             */
-/*   Updated: 2022/12/14 13:05:38 by rozeki           ###   ########.fr       */
+/*   Updated: 2023/08/16 21:03:32 by rozeki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,22 @@ static int	underflow(long int n, const char c)
 	return (1);
 }
 
+void atoi_error(const char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+		{
+			write(STDERR_FILENO,"Error\n",6);	
+			exit (1);
+		}
+		i ++;	
+	}
+}
+
 int	ft_atoi(const char *str)
 {
 	long int		ans;
@@ -49,6 +65,7 @@ int	ft_atoi(const char *str)
 	ans = 0;
 	i = 0;
 	c = 1;
+	atoi_error(str);
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
 		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;

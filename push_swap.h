@@ -5,12 +5,15 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-typedef struct s_data
+typedef struct s_stack
 {
-	struct data *head;
 	int number;
 	struct data *next;
-	struct data *prev;
-}t_data;
+}t_stack;
 
+typedef struct s_list
+{
+	struct data *head;
+	int size_list;
+}
 #endif
