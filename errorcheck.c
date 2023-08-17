@@ -2,6 +2,7 @@
 
 int error_argc2(char *h)
 {
-	atoi(h)
-	
+	int ans;
+	ans = ft_atoi(h);
+	return (ans);
 }
