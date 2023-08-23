@@ -6,7 +6,7 @@
 /*   By: rozeki <rozeki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:26:07 by rozeki            #+#    #+#             */
-/*   Updated: 2022/10/16 17:01:18 by rozeki           ###   ########.fr       */
+/*   Updated: 2023/08/24 03:53:31 by rozeki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,5 @@ int	ft_isdigit(int c)
 // 	a = ft_isdigit(48);
 // 	printf("%d",a);
 // }
+
+// https://github.com/hu8813/push_swap/blob/main/src/utils.c
