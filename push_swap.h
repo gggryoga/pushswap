@@ -23,7 +23,7 @@ typedef struct s_stack
 	int *b;
 	int a_size;
 	int b_size;
-	char *hi;
+	char *looking_argv;
 }t_stack;
 
 

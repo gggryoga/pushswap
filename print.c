@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void error_message_and_free(t_stack *s,message)
+void error_message_and_free(t_stack *s,char *message)
 {
     if (message)
         write(2,message,ft_strlen(message));
@@ -10,8 +10,8 @@ void error_message_and_free(t_stack *s,message)
             free(s->a);
         if (s->b != NULL)
             free(s->b);
-        if (s->now != NULL)
-            free(s->now);
+        if (s->looking_argv != NULL)
+            free(s->looking_argv);
         if (s != NULL)
             free (s);
     }
