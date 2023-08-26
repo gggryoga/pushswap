@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void join_argv(int argc, char **argv, t_stack *s)
 {
@@ -24,12 +24,12 @@ static void join_argv(int argc, char **argv, t_stack *s)
 	}
 	s->join_argv = ft_strdup(tmp);
 	if (s->join_argv == NULL)
-		free_and_exit_with_message(s, "Error\n");
+		error_message_and_free(s, "Error\n");
 	if (tmp)
 		free(tmp);
 }
 
-void	create_index(t_stacks *s)
+void	create_index(t_stack *s)
 {
 	int		i;
 	int		j;
@@ -38,7 +38,7 @@ void	create_index(t_stacks *s)
 
 	new_a = malloc(s->a_size * sizeof * new_a);
 	if (new_a == NULL)
-		free_and_exit_with_message(s, "Error\n");
+		error_message_and_free(s, "Error\n");
 	i = 0;
 	while (i < s->a_size)
 	{
@@ -58,25 +58,23 @@ void	create_index(t_stacks *s)
 
 int main(int argc,char **argv)
 {
-	int i;
 	t_stack *s;
 
 	check_error(argc,argv);
 	s = (t_stack*)malloc(sizeof(t_stack));
 	if (s == NULL)
 		exit (1);
-	i = 0;
 	make_stack_head(argc,argv,s);
 	join_argv(argc,argv,s);
 	make_only_numbers(s);
 	check_samenum_and_sorted(s,0);
 	create_index(s);
 	if (s->a_size == 2 && s->a[0] > s->a[1])
-		swap("sa", s->a, s->a_size);
+		swap("sa", s->a);
 	else if (s->a_size == 3)
-		sort_three_elements(s);
+		sort_three(s);
 	else if (s->a_size >= 4 && s->a_size <= 5)
-		sort_four_to_five_elements(s);
+		sort_four_five(s);
 	else
 		radix_sort(s);
 	check_samenum_and_sorted(s, 1);

@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int len_words(const char *s)
 {
@@ -19,7 +19,7 @@ int len_words(const char *s)
 	return (len);
 }
 
-int	atoi_pusw(const char *nptr, t_stacks *s)
+int	atoi_pusw(const char *nptr, t_stack *s)
 {
 	int			i;
 	long		sign;
@@ -47,18 +47,18 @@ int	atoi_pusw(const char *nptr, t_stacks *s)
 	return ((int)(jdg * sign));
 }
 
-void	make_only_numbers(t_stacks *s)
+void	make_only_numbers(t_stack *s)
 {
 	char	**tmp;
 	int		i;
 	int		j;
 
-	tmp = ft_split(s->join_args, ' ');
+	tmp = ft_split(s->join_argv, ' ');
 	i = 0;
 	j = 0;
 	while (tmp[i] != NULL && tmp[i][0] != '\0')
 	{
-		s->a[z++] = atoi_pusw(tmp[i++], s);
+		s->a[j++] = atoi_pusw(tmp[i++], s);
 		free(tmp[i - 1]);
 	}
 	free(tmp);
@@ -79,10 +79,10 @@ void make_stack_head(int argc,char **argv,t_stack *s)
 			s->a_size ++;
 		i ++; 
 	}
-	s->a = (t_stack *)malloc(s->a_size * sizeof(t_stack) * s->a);
+	s->a = malloc(s->a_size * sizeof * s->a);
 	if (s->a == NULL)
 		error_message_and_free(s,"Error\n");
-	s->b = (t_stack *)malloc(s->b_size * sizeof(t_stack) * s->b);
+	s->b = malloc(s->b_size * sizeof * s->b);
 	if (s->b == NULL)
 		error_message_and_free(s,"Eroor\n");
 }

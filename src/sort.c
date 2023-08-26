@@ -1,6 +1,6 @@
-#include "push_swap.c"
+#include "../push_swap.h"
 
-void	sort_three(t_stacks *s)
+void	sort_three(t_stack *s)
 {
 	if (s->a[2] != 2)
 	{
@@ -10,10 +10,10 @@ void	sort_three(t_stacks *s)
 			rotate(s->a, s->a_size, "down", "a");
 	}
 	if (s->a[0] > s->a[1])
-		swap("sa", s->a, s->a_size);
+		swap("sa", s->a);
 }
 
-void	sort_four_five(t_stacks *s)
+void	sort_four_five(t_stack *s)
 {
 	while (s->b_size <= 1)
 	{
@@ -23,7 +23,7 @@ void	sort_four_five(t_stacks *s)
 			rotate(s->a, s->a_size, "up", "a");
 	}
 	if (s->b[0] == 0)
-		swap("sb", s->b, s->b_size);
+		swap("sb", s->b);
 	if (s->a[2] != 4)
 	{
 		if (s->a[0] == 4)
@@ -32,12 +32,12 @@ void	sort_four_five(t_stacks *s)
 			rotate(s->a, s->a_size, "down", "a");
 	}
 	if (s->a[0] > s->a[1])
-		swap("sa", s->a, s->a_size);
+		swap("sa", s->a);
 	push("pa", s);
 	push("pa", s);
 }
 
-static void	radix_sort_stack_b(t_stacks *s, int b_size, int bit_size, int j)
+static void	radix_sort_stack_b(t_stack *s, int b_size, int bit_size, int j)
 {
 	while (b_size-- && j <= bit_size && !check_sorted(s))
 	{
@@ -51,7 +51,7 @@ static void	radix_sort_stack_b(t_stacks *s, int b_size, int bit_size, int j)
 			push("pa", s);
 }
 
-void	radix_sort(t_stacks *s)
+void	radix_sort(t_stack *s)
 {
 	int	j;
 	int	bit_size;

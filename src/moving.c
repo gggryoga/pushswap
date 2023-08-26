@@ -1,6 +1,6 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	swap(char *str, int *array, int size)
+void	swap(char *str, int *array)
 {
 	int	tmp;
 
@@ -10,7 +10,7 @@ void	swap(char *str, int *array, int size)
 	ft_putendl_fd(str, 1);
 }
 
-void	push(char *str, t_stacks *s)
+void	push(char *str, t_stack *s)
 {
 	int	tmp;
 

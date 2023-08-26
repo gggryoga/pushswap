@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int check_sorted(t_stack *s)
 {
@@ -74,8 +74,8 @@ void error_message_and_free(t_stack *s,char *message)
             free(s->a);
         if (s->b != NULL)
             free(s->b);
-        if (s->looking_argv != NULL)
-            free(s->looking_argv);
+        if (s->join_argv != NULL)
+            free(s->join_argv);
         if (s != NULL)
             free (s);
     }
